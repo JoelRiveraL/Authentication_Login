@@ -30,7 +30,7 @@ export class AuthService {
 
     async login({email, password}: any) {
         const user = await this.usersService.getUserValidation(email);
-        console.log(user);
+        console.log(user.id);
         if (!user){
             throw new UnauthorizedException('Email is incorrect');
         }

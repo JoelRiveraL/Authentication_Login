@@ -18,7 +18,7 @@ export class UsersService {
             var user = null;
             for (const userId in data) {
                 if (data[userId].email === userEmail) {
-                    user = data[userId];
+                    user = {id:userId, ...data[userId]};
                 }
             }
             return user;
